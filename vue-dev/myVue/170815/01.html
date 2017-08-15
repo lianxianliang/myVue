@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../dist/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.selected {
+				color: #ff0;
+			}
+			
+			.disabled {
+				color: #ccc;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<p v-if="isActive">确认</p>
+			<template v-else>
+				<h1>hello</h1>
+				<p>world</p>
+			</template>
+			<template v-if="loginType === 'username'">
+				<label>Username</label>
+				<input placeholder="Enter your username">
+			</template>
+			<template v-else>
+				<label>Email</label>
+				<input placeholder="Enter your email address">
+			</template>
+			<button v-on:click="toggleLoginType">toggleLoginType</button>
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#app",
+				data: {
+					isActive: true,
+					loginType: "username",
+				},
+				methods: {
+					toggleLoginType: function() {
+						console.log(this.loginType)
+						if(this.loginType === "username") {
+							this.loginType = "email"
+						} else {
+							this.loginType = "username"
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

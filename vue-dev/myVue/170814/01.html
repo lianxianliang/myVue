@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../dist/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.selected {
+				color: #ff0;
+			}
+			
+			.disabled {
+				color: #ccc;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app" class="active" v-bind:class="classObj">
+			文本
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#app",
+				data: {
+					isActive: true,
+					error: false
+				},
+				computed: {
+					classObj: function() {
+						return {
+							selected: this.isActive && !this.error,
+							disabled: this.error || this.isActive
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>
