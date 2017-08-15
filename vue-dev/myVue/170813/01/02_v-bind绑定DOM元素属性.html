@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../../dist/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+
+		<!-- v-bind: 绑定 DOM 元素属性 -->
+
+		<div id="app">
+			<span v-bind:title="msg">title</span>
+			<input v-bind:disabled="isDisabled"></input>
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#app",
+				data: {
+					msg: new Date(),
+					isDisabled: false,
+				}
+			})
+		</script>
+
+	</body>
+
+</html>

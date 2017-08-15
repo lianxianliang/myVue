@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../../dist/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+
+		<!-- v-if 条件 -->
+
+		<div id="app">
+			<p v-if="isShow">看到我了吧</p>
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#app",
+				data: {
+					isShow: true
+				}
+			})
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../../dist/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+
+		<div id="app-7">
+			<p>{{msg}}</p>
+			<p>{{reverseMSG}}</p>
+			<input type="text" v-model="firstName" />
+			<input type="text" v-model="lastName" />
+			<p>{{fullName}}</p>
+		</div>
+
+		<script type="text/javascript">
+			var app7 = new Vue({
+				el: '#app-7',
+				data: {
+					msg: "abc",
+					firstName: 'Foo',
+					lastName: 'Bar'
+				},
+				computed: {
+					reverseMSG: function() {
+						return this.msg.split("").reverse().join("");
+					},
+					fullName: function() {
+						return this.firstName + ' ' + this.lastName
+					}
+				}
+			})
+		</script>
+
+	</body>
+
+</html>
